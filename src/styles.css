@@ -1,0 +1,209 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+:root {
+  --radius: 0.75rem;
+  /* Dark cyber theme with red accent */
+  --background: oklch(0.14 0.01 20);
+  --foreground: oklch(0.97 0.005 20);
+  --card: oklch(0.18 0.015 20);
+  --card-foreground: oklch(0.97 0.005 20);
+  --popover: oklch(0.18 0.015 20);
+  --popover-foreground: oklch(0.97 0.005 20);
+  --primary: oklch(0.62 0.24 25);
+  --primary-foreground: oklch(0.98 0.005 20);
+  --primary-glow: oklch(0.72 0.22 25);
+  --secondary: oklch(0.22 0.02 20);
+  --secondary-foreground: oklch(0.97 0.005 20);
+  --muted: oklch(0.22 0.02 20);
+  --muted-foreground: oklch(0.68 0.015 20);
+  --accent: oklch(0.62 0.24 25);
+  --accent-foreground: oklch(0.98 0.005 20);
+  --destructive: oklch(0.62 0.24 25);
+  --destructive-foreground: oklch(0.98 0.005 20);
+  --border: oklch(0.28 0.02 20);
+  --input: oklch(0.24 0.02 20);
+  --ring: oklch(0.62 0.24 25);
+
+  --gradient-hero: linear-gradient(135deg, oklch(0.62 0.24 25 / 0.9), oklch(0.35 0.18 25 / 0.6));
+  --gradient-red: linear-gradient(135deg, var(--primary), var(--primary-glow));
+  --gradient-card: linear-gradient(180deg, oklch(0.20 0.02 20), oklch(0.16 0.015 20));
+  --shadow-glow: 0 0 60px -10px oklch(0.62 0.24 25 / 0.5);
+  --shadow-card: 0 20px 40px -20px oklch(0 0 0 / 0.6);
+  --shadow-red: 0 10px 30px -10px oklch(0.62 0.24 25 / 0.6);
+}
+
+.light {
+  --background: oklch(0.99 0.003 20);
+  --foreground: oklch(0.18 0.02 20);
+  --card: oklch(0.97 0.005 20);
+  --card-foreground: oklch(0.18 0.02 20);
+  --popover: oklch(0.99 0.003 20);
+  --popover-foreground: oklch(0.18 0.02 20);
+  --primary: oklch(0.55 0.22 25);
+  --primary-foreground: oklch(0.99 0.005 20);
+  --primary-glow: oklch(0.65 0.22 25);
+  --secondary: oklch(0.94 0.01 20);
+  --secondary-foreground: oklch(0.2 0.02 20);
+  --muted: oklch(0.94 0.01 20);
+  --muted-foreground: oklch(0.45 0.02 20);
+  --accent: oklch(0.55 0.22 25);
+  --accent-foreground: oklch(0.99 0.005 20);
+  --destructive: oklch(0.55 0.22 25);
+  --destructive-foreground: oklch(0.99 0.005 20);
+  --border: oklch(0.88 0.01 20);
+  --input: oklch(0.92 0.01 20);
+  --ring: oklch(0.55 0.22 25);
+  --gradient-card: linear-gradient(180deg, oklch(0.98 0.005 20), oklch(0.95 0.008 20));
+  --shadow-card: 0 20px 40px -20px oklch(0.55 0.22 25 / 0.15);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+}
+
+@utility bg-gradient-hero { background-image: var(--gradient-hero); }
+@utility bg-gradient-red { background-image: var(--gradient-red); }
+@utility bg-gradient-card { background-image: var(--gradient-card); }
+@utility shadow-glow { box-shadow: var(--shadow-glow); }
+@utility shadow-red { box-shadow: var(--shadow-red); }
+@utility text-gradient-red {
+  background-image: var(--gradient-red);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@keyframes scan {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+@utility animate-scan { animation: scan 3s linear infinite; }
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+@utility animate-blink { animation: blink 1s step-end infinite; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+@utility animate-float { animation: float 4s ease-in-out infinite; }
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.25; }
+  50% { opacity: 0.45; }
+}
+@utility animate-pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
+
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
+  20%, 24%, 55% { opacity: 0.7; }
+}
+@utility animate-flicker { animation: flicker 4s infinite; }
+
+/* ── Scroll-triggered animations ────────────────────── */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@utility animate-fade-in-up { animation: fadeInUp 0.7s ease-out both; }
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@utility animate-fade-in-left { animation: fadeInLeft 0.7s ease-out both; }
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@utility animate-fade-in-right { animation: fadeInRight 0.7s ease-out both; }
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@utility animate-fade-in-scale { animation: fadeInScale 0.6s ease-out both; }
+
+/* Staggered animation delays */
+@utility delay-100 { animation-delay: 100ms; }
+@utility delay-200 { animation-delay: 200ms; }
+@utility delay-300 { animation-delay: 300ms; }
+@utility delay-400 { animation-delay: 400ms; }
+@utility delay-500 { animation-delay: 500ms; }
+@utility delay-600 { animation-delay: 600ms; }
