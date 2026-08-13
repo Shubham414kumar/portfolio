@@ -5,8 +5,13 @@ import tailwindcss from "@tailwindcss/vite";
 import tsConfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
+  base: "/portfolio/",
   plugins: [
-    tanstackStart(),
+    tanstackStart({
+      server: {
+        preset: "github-pages",
+      },
+    }),
     viteReact(),
     tailwindcss(),
     tsConfigPaths({ projects: ["./tsconfig.json"] }),
