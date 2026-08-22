@@ -4,10 +4,8 @@ import viteReact from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import tsConfigPaths from "vite-tsconfig-paths";
 
-const isNetlify = process.env.NETLIFY === "true";
-
 export default defineConfig({
-  base: isNetlify ? "/" : "/portfolio/",
+  base: "/",
   plugins: [
     tanstackStart(),
     viteReact(),
