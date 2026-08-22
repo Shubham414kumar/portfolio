@@ -74,7 +74,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Shubham — Cybersecurity Engineer & Pentester" },
+      { title: "Shubham | Cyber Security Portfolio" },
       { name: "description", content: "Portfolio of Shubham — Penetration Tester, VAPT specialist, SOC Analyst and Software Engineer." },
       { name: "author", content: "Shubham" },
       { property: "og:site_name", content: "Shubham Portfolio" },
@@ -86,7 +86,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: "/favicon.png", type: "image/png" },
     ],
   }),
   shellComponent: RootShell,

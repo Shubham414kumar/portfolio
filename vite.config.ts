@@ -9,11 +9,7 @@ const isNetlify = process.env.NETLIFY === "true";
 export default defineConfig({
   base: isNetlify ? "/" : "/portfolio/",
   plugins: [
-    tanstackStart({
-      server: {
-        preset: isNetlify ? "netlify" : "github-pages",
-      },
-    }),
+    tanstackStart(),
     viteReact(),
     tailwindcss(),
     tsConfigPaths({ projects: ["./tsconfig.json"] }),
