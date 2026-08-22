@@ -12,7 +12,7 @@ import { ThemeToggle } from "@/components/theme-toggle";
 import { ContactForm } from "@/components/contact-form";
 import { Testimonials } from "@/components/testimonials";
 import { initAnalytics, track } from "@/lib/analytics";
-import heroV2 from "@/assets/hero-shubham-v2.asset.json";
+import heroImage from "@/assets/hero-shubham.jpg";
 import { CinematicOps, MatrixRain } from "@/components/cinematic-ops";
 import { HackerTerminal } from "@/components/hacker-terminal";
 import { BlogWriteups } from "@/components/blog-writeups";
@@ -208,7 +208,7 @@ function Portfolio() {
                 <span className="h-2.5 w-2.5 rounded-full bg-emerald-500/80" />
                 <span className="ml-auto font-mono text-[10px] text-muted-foreground">root@kali:~# portfolio.sh</span>
               </div>
-              <img src={heroV2.url} alt="Shubham — cybersecurity engineer" width={1280} height={960} className="w-full h-full object-cover pt-7" />
+              <img src={heroImage} alt="Shubham — cybersecurity engineer" width={1280} height={960} className="w-full h-full object-cover pt-7" />
               {/* Corner brackets */}
               <div className="absolute top-7 left-0 w-5 h-5 border-t-2 border-l-2 border-primary/70 z-10" />
               <div className="absolute top-7 right-0 w-5 h-5 border-t-2 border-r-2 border-primary/70 z-10" />
